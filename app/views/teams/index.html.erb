@@ -1,1 +1,4 @@
 </h1>List of teams</h1>
+<% @team.each do |info| %>
+<li><%= info.name %> <%= info.region.abbreviation %></li>
+<% end %>

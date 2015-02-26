@@ -3,3 +3,13 @@ Region.create([{ name: "North America", abbreviation: "NA LCS"},
                  { name: "Korea", abbreviation: "CHAMPIONS KOREA" },
                  { name: "China", abbreviation: "LPL CHINA" },
                  { name: "Taiwan", abbreviation: "LMS TAIWAN" }])
+Team.create([{ name: "Team SoloMid", region_id: 1},
+                { name: "Counter Logic Gaming", region_id: 1},
+                { name: "Cloud9", region_id: 1},
+                { name: "Gravity", region_id: 1},
+                { name: "Team Impulse", region_id: 1},
+                { name: "Team Liquid", region_id: 1},
+                { name: "Winterfox", region_id: 1},
+                { name: "Team 8", region_id: 1},
+                { name: "Team Dignitas", region_id: 1},
+                { name: "Team Coast", region_id: 1}])
