@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150226220427) do
+ActiveRecord::Schema.define(version: 20150226222328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "regions", force: :cascade do |t|
-    t.string "name", null: false
+    t.string "name",         null: false
+    t.string "abbreviation", null: false
   end
 
   create_table "teams", force: :cascade do |t|
