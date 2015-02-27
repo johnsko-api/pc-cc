@@ -19,7 +19,7 @@
         <%- if current_user -%>
           <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
           <% if current_user.admin? %>
-            <li><%= link_to "Admin", admin_regions_path  %></li>
+            <li><%= link_to "Admin", admin_homes_path  %></li>
           <% end %>
 
         <%- else -%>
