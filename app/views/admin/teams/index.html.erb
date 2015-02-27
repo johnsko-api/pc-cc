@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="small-10 large-centered columns">
+    <h3> Admin Section for Teams </h3>
+    <li><%= link_to "Add Team", new_admin_team_path %></li>
+    <table>
+      <tr>
+        <td><strong>Team Name</td>
+          <td><strong>Region</td>
+                </tr>
+                <% @teams.each do |info| %>
+                <tr>
+                  <td><%= info.name %></td>
+                  <td><%= info.region.name %></td>
+                  <td><%= link_to 'Edit', edit_admin_team_path(info) %></td>
+                  <td><%= link_to "Delete", admin_team_path(info), method: :delete, data: { confirm: "Are you sure?" } %></td>
+                </tr>
+                <% end %>
+              </table>
+            </div>
+          </div>
