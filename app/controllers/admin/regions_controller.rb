@@ -1,10 +1,15 @@
-class RegionsController < ApplicationController
+class Admin::RegionsController < ApplicationController
+
   def index
-    @region = Region.all.limit(10)
+    @regions = Region.all
   end
 
   def new
     @region = Region.new
+  end
+
+  def edit
+    @region = Region.find(params[:id])
   end
 
   def update
@@ -18,10 +23,22 @@ class RegionsController < ApplicationController
     end
   end
 
+  def new
+    @region = Region.new
+  end
+
+  def create
+    @region = Region.new(region_params)
+  end
+
   def destroy
-  @region = Region.find(params[:id])
+    @region = Region.find(params[:id])
     if @region.destroy
-      redirect_to admin_path, notice: "Region Deleted Successfully"
+      flash[:notice] = "Region successfully deleted"
+      redirect_to admin_regions_path
+    else
+      flash[:alert] = "Failed to delete Region"
+      redirect_to admin_regions_path
     end
   end
 
@@ -30,4 +47,5 @@ class RegionsController < ApplicationController
   def region_params
     params.require(:region).permit(:name, :abbreviation)
   end
+
 end

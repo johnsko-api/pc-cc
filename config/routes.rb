@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   root 'homes#index'
-  get 'regions' => 'regions#index'
-  get 'teams' => 'teams#index'
+  resources :regions
+  resources :teams
+
+  namespace :admin do
+    resources :regions
+    resources :teams
+  end
+
   devise_for :users
 end
