@@ -5,8 +5,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :homes, only: [:index]
-    resources :regions
-    resources :teams
+    resources :regions, only: [:index, :new, :create, :edit, :update, :destroy]
+    resources :teams, only: [:index, :new, :create, :edit, :update, :destroy]
   end
 
   devise_for :users
