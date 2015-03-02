@@ -1,0 +1,34 @@
+<h1> Matches Form </h1>
+
+<%= simple_form_for @match do |f| %>
+
+  <div class="field">
+    <%= f.input :name, label: 'Name' %>
+  </div>
+
+  <div class="field">
+    <%= f.input :region_id, :collection => Region.all, :label_method => :name, :value_method => :id, label: "Region", :include_blank => false %>
+  </div>
+
+  <div class="field">
+    <%= f.input :team1, :collection => Team.all, :label_method => :name, :value_method => :id, label: 'Team 1', :include_blank => false %>
+  </div>
+
+  <div class="field">
+    <%= f.input :team2, :collection => Team.all, :label_method => :name, :value_method => :id, label: 'Team 1', :include_blank => false %>
+  </div>
+
+  <div class="field">
+    <%= f.input :date_played, as: :date, start_year: Date.today.year,
+                                end_year: Date.today.year,
+                                order: [:month, :day, :year], label: 'Match Date' %>
+  </div>
+
+  <div class="field">
+    <%= f.input :video_url, label: 'Video URL' %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit, class: "button" %>
+  </div>
+  <% end %>

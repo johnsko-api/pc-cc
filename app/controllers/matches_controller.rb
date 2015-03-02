@@ -18,6 +18,27 @@ class MatchesController < ApplicationController
     @match = Match.find(params[:id])
   end
 
+  def edit
+    @match = Match.find(params[:id])
+  end
+
+  def update
+    @match = Match.find(params[:id])
+    if @match.update(match_params)
+      flash[:success] = "You've updated a match!"
+      redirect_to @match
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @match = Match.find(params[:id])
+    @match.destroy
+      flash[:success] = "You've deleted a match!"
+    redirect_to matches_path
+  end
+
   private
 
   def match_params
