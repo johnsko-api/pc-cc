@@ -1,0 +1,16 @@
+<h1> Teams Form </h1>
+
+<%= simple_form_for @team do |f| %>
+
+  <div class="field">
+    <%= f.input :name, label: 'Name' %>
+  </div>
+
+  <div class="field">
+    <%= f.input :region_id, :collection => Region.all, :label_method => :name, :value_method => :id, label: "Region", :include_blank => false %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit, class: "button" %>
+  </div>
+  <% end %>
