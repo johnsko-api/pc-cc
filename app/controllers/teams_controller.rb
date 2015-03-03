@@ -16,6 +16,10 @@ class TeamsController < ApplicationController
 
   def show
     @team = Team.find(params[:id])
+    @matches = Match.where(team1: params[:id])
+    # one problem i have is we have team1 and team2 in our database
+    # we need to check if either or has the params id to show it
+    # but im looking into that right now
   end
 
   def edit

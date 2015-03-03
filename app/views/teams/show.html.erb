@@ -1,2 +1,6 @@
 <%= @team.name %>
 <%= @team.region.name %>
+
+<% @matches.each do |match| %>
+<%= match.name %>
+<% end %>

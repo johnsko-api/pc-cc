@@ -1,3 +1,10 @@
+<h1><%= @region.name %></h1>
+<h3><%= @region.abbreviation %></h3>
 <% @teams.each do |team| %>
-<li><%= team.name %></li>
+<li><a href="/teams/<%=team.id%>"><%= team.name %></a></li>
+<% end %>
+
+
+<% @matches.each do |match| %>
+<ul><%= match.name %></ul>
 <% end %>

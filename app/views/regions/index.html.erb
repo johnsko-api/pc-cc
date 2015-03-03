@@ -1,4 +1,4 @@
 <h1> List of all the Regions </h1>
 <% @region.each do |info| %>
-<li>Name: <%= info.name %>, Region:<%= info.abbreviation %></li>
+<li><a href="/regions/<%=info.id%>"><%= info.abbreviation %></a></li>
   <% end %>
