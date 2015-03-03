@@ -8,6 +8,10 @@ class RegionsController < ApplicationController
     @region = Region.new
   end
 
+  def show
+    @teams = Team.where(region_id: params[:id])
+  end
+
   def create
     @region = Region.new(region_params)
     @region.save
