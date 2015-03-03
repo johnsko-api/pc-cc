@@ -1,10 +1,21 @@
 class RegionsController < ApplicationController
+
   def index
     @region = Region.all.limit(10)
   end
 
   def new
     @region = Region.new
+  end
+
+  def create
+    @region = Region.new(region_params)
+    @region.save
+    redirect_to regions_path
+  end
+
+  def edit
+    @region = Region.find(params[:id])
   end
 
   def update
