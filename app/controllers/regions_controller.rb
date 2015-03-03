@@ -9,7 +9,9 @@ class RegionsController < ApplicationController
   end
 
   def show
+    @region = Region.find(params[:id])
     @teams = Team.where(region_id: params[:id])
+    @matches = Match.where(region_id: params[:id])
   end
 
   def create
