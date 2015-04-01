@@ -18,13 +18,13 @@ ActiveRecord::Schema.define(version: 20150226231706) do
 
   create_table "matches", force: :cascade do |t|
     t.string   "name",        null: false
-    t.integer  "team1",       null: false
-    t.integer  "team2",       null: false
     t.integer  "region_id",   null: false
     t.date     "date_played", null: false
     t.string   "video_url",   null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "team2"
+    t.integer  "team1"
   end
 
   create_table "regions", force: :cascade do |t|

@@ -4,7 +4,7 @@
 <li><a href="/teams/<%=team.id%>"><%= team.name %></a></li>
 <% end %>
 
-
+<br>
 <% @matches.each do |match| %>
-<ul><%= match.name %></ul>
+<ul><a href="/matches/<%=match.id%>"><%= match.name %></a></ul>
 <% end %>

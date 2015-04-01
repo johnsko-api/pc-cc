@@ -16,6 +16,7 @@ class MatchesController < ApplicationController
 
   def show
     @match = Match.find(params[:id])
+    @video = "#{@match.video_url}".sub("watch?v=", "v/")
   end
 
   def edit
@@ -42,7 +43,7 @@ class MatchesController < ApplicationController
   private
 
   def match_params
-    params.require(:match).permit(:name, :team1, :team2, :region_id, :date_played, :video_url)
+    params.require(:match).permit(:name, :region_id, :date_played, :video_url, :team1, :team2)
   end
 
 end

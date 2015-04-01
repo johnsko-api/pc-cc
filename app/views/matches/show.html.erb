@@ -1,16 +1,5 @@
-<%=@match.video_url %>
-
-
-
 <section class="row">
   <div class="span6">
-    <div class="flex-video widescreen"><iframe src="https://www.youtube.com/v/2Y3myqlXSXM" frameborder="0" allowfullscreen=""></iframe></div>
+    <div class="flex-video widescreen"><iframe src="<%=@video%>" frameborder="0" allowfullscreen=""></iframe></div>
   </div>
 </section>
-
-
-<!-- ("watch?v=", "v/"); -->
-need to gsub watch?v with v/" so it works dynamicallyS"
-
-
-<%= link_to "Delete", match_path(@match), method: :delete, class: "button tiny"%>
